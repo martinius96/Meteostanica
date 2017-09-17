@@ -17,10 +17,13 @@
 # Schéma zapojenia
 ![alt text](https://i.nahraj.to/f/1JUd.JPG)
 Arduino môžete kontrolovať. Ako vidíte v kóde, to, čo sa odošle do internetu (ak vôbec) tak sa vypíše aj na sériovej linke. Nezabudnite na predefinovanú rýchlosť 9600. Cez Putty je možné sledovať čo do internetu odišlo, aby ste vedeli, či máte pripojenie z Arduina aktívne. Odporúčam nastaviť IP napríklad na 192.168.1.254 kde nehrozí kolízia z rozsahu DHCP, ktorý je najčastejeiše 192.168.1.100-192.168.1.150. Nezabudnite, že pri čidlách DS18B20 je nutné použiť 4,7Kohm odpor pre možnosť využitia OneWire protokolu. 
+
 Jedným vodičom prúdi napájanie i dáta na PIN 6. Neoficiálne zdroje hovoria, že ak napojíte onewire na krútenú dvojlinku, tak je možné je využiť až na 300 metrov. Niečo o OneWire protokole si môžete prečítať TU: https://cs.wikipedia.org/wiki/1-Wire
 Následuje aj server-side časť. V scripte pre Arduino je spomenutý add.php súbor, na ktorý sa robí požiadavka GET metódou cez ? kde napr: temp1=20.34&temp2=21.88&hum1=47.58&pres1=1014.28 Takýto request môže byť uložený do databázy, ak je na PHP súbore nastavená metóda GET a na ňu je vytvorený MySQL request. 
+
 Pre lepší výkon využívam súčasne najpoužívanejšie MySQLi. Súbor nie je dobré prezrádzať. Ak ho otvoríte na prázdno, tak sa všade uloží 0. V prípade, že niekto zistí link napríklad vasastranka.sk/add.php tak môže uložiť čo chce, napríklad temp1=5000 a podobne, nehovoriac o tom, že script nemá žiadne bezpečnostné prvky.
-#Tabuľky budú vyzerať následovne:
+
+# Tabuľky budú vyzerať následovne:
 id s parametrami(A_I) PRIMARY KEY
 temperature temperature pressure humidity (jedna z týchto hodnôt pre každú tabuľku tabulka TempOutside s položkou temperature, TempLivingRoom s položkou temperature, tabuľka PressureOutside s položkou pressure a tabuľka Humidity s položkou humidity)
 time TYPU TIMESTAMP S UPDATE ACTUAL ON REQUEST
