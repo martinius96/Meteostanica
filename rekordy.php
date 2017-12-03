@@ -26,8 +26,7 @@ najnižšia teplota, °C, stupne, tlak, hPa, atmosferický tlak, atmosféra, pro
 </script>
 
 <script type="text/javascript" src="https://www.google.com/jsapi?autoload={'modules':[{'name':'visualization','version':'1','packages':['gauge']}]}"></script>
-<?php include("connect.php"); 
-header('Content-Type: text/html; charset=utf-8'); ?>
+<?php include("connect.php"); ?>
  <?php
   $highesttempoutsidetoday = mysqli_query($con,"SELECT MAX(temperature) AS NajvyssiVondnes, time FROM TempOutside WHERE date(time) = CURDATE()") or die(mysqli_error($con));         
     $highesttempoutsidetodayJs=0;     

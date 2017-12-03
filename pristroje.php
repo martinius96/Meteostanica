@@ -2,7 +2,6 @@
 <html>
     
 <head>
-<?php header('Content-Type: text/html; charset=utf-8');  ?>
 <title>Amatérska meteostanica - Powered by Arduino</title>
 <meta name="google-site-verification" content="99geZzMQuCEbWS3wtRt2Ih_ZkECtd4vqbYD2U0K-oOU" />
 <meta name="keywords" content="amatérska meteorologická stanica, stanica, meteorológia, meteo stanica, meteorologická stanica, počasie, predpoveď, prognóza, teplota, priemerná teplota, najvyššia teplota,

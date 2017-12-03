@@ -28,8 +28,7 @@ najnižšia teplota, °C, stupne, tlak, hPa, atmosferický tlak, atmosféra, pro
 </head>
  
 <body>
-<?php include("connect.php");
-header('Content-Type: text/html; charset=utf-8');  ?>
+<?php include("connect.php"); ?>
 <ul class="topnav">
   <li><a href="index.php"><img src="img/gauge.png" alt="Aktuálne merania"></a></li>
   <li><a href="zaznamy.php"><img src="img/newspaper.png" alt="newspaper.png, 935B" title="Záznamy" height="64" width="64"></a></li>

@@ -1,6 +1,5 @@
 <?php
-header('Content-Type: text/html; charset=utf-8'); 
-$con = mysqli_connect("localhost","meno","heslo","nazovdb");
+$con = mysqli_connect("localhost","meno","heslo","databaza");
      mysqli_set_charset($con,"utf8");
      
 if (mysqli_connect_errno())

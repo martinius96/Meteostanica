@@ -28,7 +28,6 @@ najnižšia teplota, °C, stupne, tlak, hPa, atmosferický tlak, atmosféra, pro
 
 </head>
 <?php include("connect.php"); 
-header('Content-Type: text/html; charset=utf-8'); 
   $todaytemperaturesoutsideall = mysqli_query($con,"SELECT temperature, time FROM TempOutside WHERE date(time) = CURDATE() ORDER by time") or die(mysqli_error($con));         
     $todaytemperaturesoutsideallJs=array();                                                     
            while($row = mysqli_fetch_assoc($todaytemperaturesoutsideall)){

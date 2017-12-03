@@ -43,7 +43,6 @@ najnižšia teplota, °C, stupne, tlak, hPa, atmosferický tlak, atmosféra, pro
    <div style="padding:0 16px;">
   
   <?php
-header('Content-Type: text/html; charset=utf-8'); 
   if(isset($_POST["changeIt"])) {
     if(file_get_contents("readme.txt") === "1") {
       file_put_contents("readme.txt", 0);
