@@ -38,11 +38,11 @@ void loop() {                                      //ZACIATOK SLUCKY
     Serial.println("Pripojenie uspesne na webserver"); //VYPIS NA SERIOVU LINKU
     client.print("GET /add.php?temp1=");         //ZAČIATOK HTTP REQUEST --> client.print GET METODOU s oznacenim premennej, do ktorej pridame hodnotu v URL
     client.print(sensors.getTempCByIndex(0));    // VYPIS HODNOTY 1. SENZORU NA INDEXE 0 DO URL
-    client.print("&temp2=");                     //TEXTOVE DOPLNENIE DRUHEJ PREMENNEJ DO KTOREJ UVEDIEME COMU SA ROVNA TAKTIEZ V URL
+    client.print("&tempinside=");                     //TEXTOVE DOPLNENIE DRUHEJ PREMENNEJ DO KTOREJ UVEDIEME COMU SA ROVNA TAKTIEZ V URL
     client.print(sensors.getTempCByIndex(1));    // VYPIS HODNOTY 2. SENZORU NA INDEXE 1 DO URL
-    client.print("&hum1=");                      //TEXTOVE DOPLNENIE TRETEJ PREMENNEJ DO KTOREJ UVEDIEME COMU SA ROVNA TAKTIEZ V URL
+    client.print("&humidity=");                      //TEXTOVE DOPLNENIE TRETEJ PREMENNEJ DO KTOREJ UVEDIEME COMU SA ROVNA TAKTIEZ V URL
     client.print(dht12.readHumidity());          // VYPIS VLHKOMERU DO LINKU, HODNOTA, KTOREJ SA ROVNA PREMENNA HUM1
-    client.print("&pres1=");                     //TEXTOVE DOPLNENIE STVRTEJ PREMENNEJ DO KTOREJ UVEDIEME COMU SA ROVNA TAKTIEZ V URL
+    client.print("&pressure=");                     //TEXTOVE DOPLNENIE STVRTEJ PREMENNEJ DO KTOREJ UVEDIEME COMU SA ROVNA TAKTIEZ V URL
     client.print((bmp.readPressure() / 100) + 30, 120481927710843373493975903614); // VYPIS BAROMETRA DO LINKU + PRIPOCITANA KONSTANTA NA ZAKLADE NADMORSKEJ VYSKY PRE SPRAVNY PREPOCET NA RELATIVNY TLAK
     client.println(" HTTP/1.1");                 // UKONCENIE REQUESTU ZALOMENIM RIADKA A DOPLNENIM HLAVICKY HTTP S VERZIOU
     client.println("Host: www.mojastranka.sk"); // ADRESA HOSTA, NA KTOREHO BOL MIERENY REQUEST (NIE PHP SUBOR)
