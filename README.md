@@ -1,6 +1,4 @@
 # Meteostanica
-# Rozbalenie .rar packu
-.RAR pack rozbaľte do root priečinku k PHP súborom!
 # Obsah projektu
 * monitoring teplôt v domácnosti (vonkajšiu i vnútornú)
 * monitoring vlhkosti, 
