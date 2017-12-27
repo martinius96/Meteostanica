@@ -1,4 +1,0 @@
-<?
-$hlavicky = getallheaders();
-echo $hlavicky;
-?> 
