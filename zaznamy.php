@@ -1,3 +1,10 @@
+
+<!--Autor: Martin Chlebovec alias: martinius96-->
+<!--Podpora: https://www.paypal.me/Chlebovec-->
+<!--Osobný web: https://arduino.php5.sk-->
+<!--Email kontakt: martinius96@gmail.com-->
+<!--Facebook kontakt: 100001242570317-->
+<!--Používajte v súhade s licenciou!-->
 <!DOCTYPE html>
 <html>
 <head>
@@ -13,17 +20,6 @@ najnižšia teplota, °C, stupne, tlak, hPa, atmosferický tlak, atmosféra, pro
 <link rel="stylesheet" href="css/style.css">
 <link rel="shortcut icon" type="image/x-icon" href="img/meteostation.ico">
 <link rel="sitemap" type="application/xml" title="Mapa stránky" href="sitemap.xml">
-<script>
-  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
-
-  ga('create', 'UA-76290977-2', 'auto');
-  ga('send', 'pageview');
-
-</script>
-
 </head>
 <body>
 <?php include("connect.php"); ?>
@@ -35,8 +31,7 @@ najnižšia teplota, °C, stupne, tlak, hPa, atmosferický tlak, atmosféra, pro
   <li><a href="rele.php"><img src="img/switch.png" alt="switch.png, 1,9kB" title="Relé" height="64" width="64"></a></li>
    <li><a href="pristroje.php"><img src="img/settings.png" alt="settings.png, 1,5kB" title="Prístroje" height="64" width="64"></a></li>
     <li><a href="prognoza.php"><img src="img/sunny.png" alt="sunny.png, 1,2kB" title="Prognóza" height="64" width="64"></a></li>
-   <li class=right><a href="kontakt.php"><img src="img/chat.png" alt="chat.png, 1,2kB" title="Kontakt" height="64" width="64"></a></li>
- </ul>
+   </ul>
 
 <div class="container">
 <div class="floatLeft">   <hr>
