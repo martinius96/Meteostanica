@@ -68,8 +68,7 @@ var pressureOutsideJs = <?=$pressureOutsideJs?>;
   <li><a href="rele.php"><img src="img/switch.png" alt="switch.png, 1,9kB" title="Relé" height="64" width="64"></a></li>
    <li><a href="pristroje.php"><img src="img/settings.png" alt="settings.png, 1,5kB" title="Prístroje" height="64" width="64"></a></li>
     <li><a href="prognoza.php"><img src="img/sunny.png" alt="sunny.png, 1,2kB" title="Prognóza" height="64" width="64"></a></li>
-   <li class=right><a href="kontakt.php"><img src="img/chat.png" alt="chat.png, 1,2kB" title="Kontakt" height="64" width="64"></a></li>
- </ul>                                          
+    </ul>                                          
 
 <div style="padding:0 16px;">
 <center><hr><h2>Posledné merania jednotlivých prístrojov</h2> <hr>
