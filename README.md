@@ -11,7 +11,7 @@
 
 ![alt text](https://images-na.ssl-images-amazon.com/images/I/31anMgqT9BL._SY300_.jpg)  ![alt text](https://images-na.ssl-images-amazon.com/images/I/41PtGDgGbzL._SY300_.jpg) 2x DS18B20 (indoor a outdoor typ), 
 
-![alt text](http://i.ebayimg.com/images/g/hDkAAOSwintXSATy/s-l300.jpg)DHT12 (meranie vlhkosti), 
+![alt text](https://d198pdkcx2sur5.cloudfront.net/31/ac/imageA2231ac334783c8c7bada706a42b8fc3586dfd322.jpg)DHT12 (meranie vlhkosti), 
 
 ![alt text](http://i.ebayimg.com/images/g/rR8AAOSwu1VW4CQC/s-l300.jpg) BMP280 (meranie tlaku)
 # Schéma zapojenia
