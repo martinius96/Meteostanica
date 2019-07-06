@@ -33,12 +33,13 @@ Po uložení týchto tabuliek je možné navrhnúť webstránku, kde budete vaš
 ![alt text](https://i.nahraj.to/f/1JUi.JPG)
 ![alt text](https://i.nahraj.to/f/1JUh.JPG)
 ![alt text](https://i.nahraj.to/f/1JUg.JPG)
+
 # Vyhotovenie
 ![alt text](https://i.nahraj.to/f/1JUe.jpg)
 ![alt text](https://i.nahraj.to/f/1JUf.jpg)
+
 # UPOZORNENIE NA ZÁVER: 
-Ethernet Shield minimálne ten, ktorý som tu popísal W5100 nepodporuje HTTPS protokol. Jeho procesor nezvláda šifrovanie. Preto, ak chcete tento koncept vyskúšať, siahnite po HTTP hostingu. V prípade, že chcete testovať na HTTPS, zakúpte si Wifi Shield 101, alebo NodeMCU. 
-HTTPS hosting free: PHP5.sk --> doména 3. radu zdarma, teda vasastranka.php5.sk je to ale na HTTPS! Nepoužívať s Ethernet Shieldom W5100. Ak chcete využívať pod HTTPS skúste napríklad s NodeMCU, alebo samostatným ESP8266 čipom!
-Pre HTTP vyskúšajte Endoru, alebo Hostinger, prípadne Studenthosting.
+Ethernet Shield W5100 nepodporuje HTTPS protokol. Jeho procesor nezvláda šifrovanie a rovnako tak ani Arduino Uno nie je uspôsobený pre krypto operácie. Preto, ak chcete tento koncept vyskúšať, siahnite po HTTP hostingu. V prípade, že chcete testovať na HTTPS, zakúpte si Wifi Shield 101, alebo WiFi IoT čip ESP8266, ESP32. 
+
 # PODPORA A KONTAKT
 Podporiť ma a kontaktovať ma môžete cez moju stránku https://arduino.php5.sk
