@@ -23,10 +23,8 @@ Následuje aj server-side časť. V scripte pre Arduino je spomenutý add.php s�
 
 Pre lepší výkon využívam súčasne najpoužívanejšie MySQLi. Súbor nie je dobré prezrádzať. Ak ho otvoríte na prázdno, tak sa všade uloží 0. V prípade, že niekto zistí link napríklad vasastranka.sk/add.php tak môže uložiť čo chce, napríklad temp1=5000 a podobne, nehovoriac o tom, že script nemá žiadne bezpečnostné prvky.
 
-# Tabuľky budú vyzerať následovne:
-id s parametrami(A_I) PRIMARY KEY
-temperature temperature pressure humidity (jedna z týchto hodnôt pre každú tabuľku tabulka TempOutside s položkou temperature, TempLivingRoom s položkou temperature, tabuľka PressureOutside s položkou pressure a tabuľka Humidity s položkou humidity)
-time TYPU TIMESTAMP S UPDATE ACTUAL ON REQUEST
+# Import tabuliek do MySQL databázy
+Importovať súbor z priečinka /sql do phpmyadmin, alebo iného DB softvéru používajúceho MySQL databázu.
 
 Po uložení týchto tabuliek je možné navrhnúť webstránku, kde budete vaše údaje zobrazovať. Pridávam screenshoty mojej, ktorú som si vytvoril vrátane .PHP kódov pre výpočet priemerov, vykreslenie naj hodnoty dňa, prognóza počasia.
 ![alt text](https://i.nahraj.to/f/1JUl.JPG)
