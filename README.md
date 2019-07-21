@@ -1,4 +1,5 @@
 # Meteostanica
+**Používaním projektu sa osoba zaväzuje k dodržiavaniu zmluvných podmienok MIT licencie, pod ktorou je projekt šírený! Uvedomuje si riziká, obmedzenia a svoje povinnosti. Všeobecne o MIT licencii: https://sk.wikipedia.org/wiki/MIT_licencia**
 # Obsah projektu
 * monitoring teplôt v domácnosti (vonkajšiu i vnútornú)
 * monitoring vlhkosti, 
