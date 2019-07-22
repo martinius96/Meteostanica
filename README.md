@@ -1,5 +1,7 @@
 # Meteostanica
 **Používaním projektu sa osoba zaväzuje k dodržiavaniu zmluvných podmienok MIT licencie, pod ktorou je projekt šírený! Uvedomuje si riziká, obmedzenia a svoje povinnosti. Všeobecne o MIT licencii: https://sk.wikipedia.org/wiki/MIT_licencia**
+# Podporte projekt pre pridanie nových funkcionalít
+* https://www.paypal.me/chlebovec
 # Obsah projektu
 * monitoring teplôt v domácnosti (vonkajšiu i vnútornú)
 * monitoring vlhkosti, 
@@ -41,6 +43,3 @@ Po uložení týchto tabuliek je možné navrhnúť webstránku, kde budete vaš
 
 # UPOZORNENIE NA ZÁVER: 
 Ethernet Shield W5100 nepodporuje HTTPS protokol. Jeho procesor nezvláda šifrovanie a rovnako tak ani Arduino Uno nie je uspôsobený pre krypto operácie. Preto, ak chcete tento koncept vyskúšať, siahnite po HTTP hostingu. V prípade, že chcete testovať na HTTPS, zakúpte si Wifi Shield 101, alebo WiFi IoT čip ESP8266, ESP32. 
-
-# PODPORA A KONTAKT
-Podporiť ma a kontaktovať ma môžete cez moju stránku https://arduino.php5.sk
