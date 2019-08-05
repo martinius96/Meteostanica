@@ -73,12 +73,13 @@ $secondpressure = $row['pressure'];
 if($summer1 <= $today && $today <= $summer2)
 {  echo 'Obdobie: 1. máj - 30. september <br />';  
                  
-$burky = range(900,999.99);
-$nepriaznivo_prehanky_veterno_chladno = range(1000,1011.99);
-$striedavo_oblacno_sklon_k_zrazkam_pri_vyssej_teplote = range(1012,1014.99);
-$striedavo_zlepsenie = range(1015,1020.99);
-$oblacno_mala_pravdepodobnost_zrazok = range(1021,1027.99);
-$pekne_sucho = range(1028,1100);
+$burky = range(900,999.99, 0.01);
+$nepriaznivo_prehanky_veterno_chladno = range(1000,1011.99, 0.01);
+$striedavo_oblacno_sklon_k_zrazkam_pri_vyssej_teplote = range(1012,1014.99, 0.01);
+$striedavo_zlepsenie = range(1015,1020.99, 0.01);
+$oblacno_mala_pravdepodobnost_zrazok = range(1021,1027.99, 0.01);
+$pekne_sucho = range(1028,1100, 0.01);
+ 
 //KONIEC INSTANCII
 if(MIN($burky) <= $pressure && $pressure <=  MAX($burky))  //0
 {
@@ -116,11 +117,11 @@ if($pressure>=$secondpressure) {echo 'Pekné počasie, teplota normálna';}
 else
 {   echo 'Obdobie: 1. október - 30. apríl <br />';     
 
-$burky = range(900,986.99);
-$zamracene_zrazky_pri_rychlom_stupani_tlaku_zlepsenie = range(987,999.99);
-$zamracene_sklon_k_zrazkam_pri_rychlom_stupani_tlaku_zlepsenie_ochladenie = range(1000,1012.99);
-$hmly_pretrvava_doterajsie_pocasie_mala_pravdepodobnost_zrazok = range(1013,1027.99);
-$bez_zrazok_mrazy_pri_pomalom_stupani_zrazky_pri_rychlom_zlepsenie_pri_pomalom_zhorsenie_zrazky = range(1028,1100);
+$burky = range(900,986.99, 0.01);
+$zamracene_zrazky_pri_rychlom_stupani_tlaku_zlepsenie = range(987,999.99, 0.01);
+$zamracene_sklon_k_zrazkam_pri_rychlom_stupani_tlaku_zlepsenie_ochladenie = range(1000,1012.99, 0.01);
+$hmly_pretrvava_doterajsie_pocasie_mala_pravdepodobnost_zrazok = range(1013,1027.99, 0.01);
+$bez_zrazok_mrazy_pri_pomalom_stupani_zrazky_pri_rychlom_zlepsenie_pri_pomalom_zhorsenie_zrazky = range(1028,1100, 0.01);
 if(MIN($burky) <= $pressure && $pressure <=  MAX($burky))
 {
 if($pressure>=$secondpressure) {echo 'Búrky/Silný vietor - víchrica';}
