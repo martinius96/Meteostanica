@@ -22,78 +22,34 @@ najnižšia teplota, °C, stupne, tlak, hPa, atmosferický tlak, atmosféra, pro
 <link rel="shortcut icon" type="image/x-icon" href="img/meteostation.ico">
 <link rel="sitemap" type="application/xml" title="Mapa stránky" href="sitemap.xml">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+<script type="text/javascript" src="https://www.google.com/jsapi"></script>
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
+
 </head>
-<?php include("connect.php"); 
-  $todaytemperaturesoutsideall = mysqli_query($con,"SELECT temperature, time FROM TempOutside WHERE date(time) = CURDATE() ORDER by time") or die(mysqli_error($con));         
-    $todaytemperaturesoutsideallJs=array();                                                     
-           while($row = mysqli_fetch_assoc($todaytemperaturesoutsideall)){
-             $date = strtotime($row['time']);     
-	 $todaytemperaturesoutsideallJs[]='{ x: new Date('.date('Y,n,d,H,i', $date).'), y: '.round($row['temperature'],2).' }'; }
-   $todaytemperatureslivingroomall = mysqli_query($con,"SELECT temperature, time FROM TempLivingRoom WHERE date(time) = CURDATE() ORDER by time") or die(mysqli_error($con));         
-    $todaytemperatureslivingroomallJs=array();                                                     
-           while($row = mysqli_fetch_assoc($todaytemperatureslivingroomall)){
-             $date = strtotime($row['time']);
-	 $todaytemperatureslivingroomallJs[]='{ x: new Date('.date('Y,n,d,H,i', $date).'), y: '.round($row['temperature'],2).' }'; }
-   
-   
-     $todayhumidityoutsideall = mysqli_query($con,"SELECT humidity, time FROM Humidity WHERE date(time) = CURDATE() ORDER by time") or die(mysqli_error($con));         
-    $todayhumidityoutsideallJs=array();                                                     
-           while($row = mysqli_fetch_assoc($todayhumidityoutsideall)){
-             $date = strtotime($row['time']);     
-	 $todayhumidityoutsideallJs[]='{ x: new Date('.date('Y,n,d,H,i', $date).'), y: '.round($row['humidity'],2).' }'; }
-   
-   
-    $todaypressureoutsideall = mysqli_query($con,"SELECT pressure, time FROM PressureOutside WHERE date(time) = CURDATE() ORDER by time") or die(mysqli_error($con));         
-    $todaypressureoutsideallJs=array();                                                     
-           while($row = mysqli_fetch_assoc($todaypressureoutsideall)){
-             $date = strtotime($row['time']);
-	 $todaypressureoutsideallJs[]='{ x: new Date('.date('Y,n,d,H,i', $date).'), y: '.round($row['pressure'],2).' }'; }
- 
-                                           
-    $todaytemperaturesoutsideFull = mysqli_query($con,"SELECT temperature, time FROM TempOutside ORDER by time") or die(mysqli_error($con));         
-    $todaytemperaturesoutsideFullJs=array();                                                     
-           while($row = mysqli_fetch_assoc($todaytemperaturesoutsideFull)){
-             $date = strtotime($row['time']);
-	 $todaytemperaturesoutsideFullJs[]='{ x: new Date('.date('Y,n,d,H,i', $date).'), y: '.round($row['temperature'],2).' }'; }
+<?php include("connect.php");
+//STVRTY GRAF                                                           
+$result4 = mysqli_query($con,"SELECT temperature, time FROM TempOutside WHERE time >= DATE_SUB(NOW(),INTERVAL 24 HOUR)") or die(mysqli_error($con));
+$rows4 = array();
+$table4 = array();
+$table4['cols'] = array(
+    array('label' => 'time', 'type' => 'string'),
+    array('label' => 'Teplota von', 'type' => 'number')
+	);
+    foreach($result4 as $r4) {
+$cas4 = strtotime($r4['time']);
+	$cas4 = date('H:i',$cas4);
+        $temp4 = array();
+        // The following line will be used to slice the Pie chart
+        $temp4[] = array('v' => (string) $cas4);
+        $temp4[] = array('v' => (float) $r4['temperature']);
+       // $temp[] = array('v' => (float) $r['teplota2']);
+        $rows4[] = array('c' => $temp4);
+        }
+$table4['rows'] = $rows4;
+$jsonTable4 = json_encode($table4);
 
+  ?>
 
-
-    $todaytemperatureslivingroomFull = mysqli_query($con,"SELECT temperature, time FROM TempLivingRoom ORDER by time") or die(mysqli_error($con));         
-    $todaytemperatureslivingroomFullJs=array();                                                     
-           while($row = mysqli_fetch_assoc($todaytemperatureslivingroomFull)){
-             $date = strtotime($row['time']);
-	 $todaytemperatureslivingroomFullJs[]='{ x: new Date('.date('Y,n,d,H,i', $date).'), y: '.round($row['temperature'],2).' }'; }
-   
-    
-   
-   
-   $todaypressureoutsideFull = mysqli_query($con,"SELECT pressure, time FROM PressureOutside ORDER by time") or die(mysqli_error($con));         
-    $todaypressureoutsideFullJs=array();                                                     
-           while($row = mysqli_fetch_assoc($todaypressureoutsideFull)){
-             $date = strtotime($row['time']);
-	 $todaypressureoutsideFullJs[]='{ x: new Date('.date('Y,n,d,H,i', $date).'), y: '.round($row['pressure'],2).' }'; }
-   
-   $todayhumidityoutsideFull = mysqli_query($con,"SELECT humidity, time FROM Humidity ORDER by time") or die(mysqli_error($con));         
-    $todayhumidityoutsideFullJs=array();                                                     
-           while($row = mysqli_fetch_assoc($todayhumidityoutsideFull)){
-             $date = strtotime($row['time']);
-	 $todayhumidityoutsideFullJs[]='{ x: new Date('.date('Y,n,d,H,i', $date).'), y: '.round($row['humidity'],2).' }'; }
-
-?>
-
-<script>         
-window.todaytemperaturesoutsideallJs = [<?= implode(',', $todaytemperaturesoutsideallJs) ?>];
-window.todayhumidityoutsideallJs = [<?= implode(',', $todayhumidityoutsideallJs) ?>];
-window.todaytemperatureslivingroomallJs = [<?= implode(',', $todaytemperatureslivingroomallJs) ?>];
-window.todaypressureoutsideallJs = [<?= implode(',', $todaypressureoutsideallJs) ?>];
-window.todaytemperaturesoutsideFullJs = [<?= implode(',', $todaytemperaturesoutsideFullJs) ?>];
-window.todaytemperatureslivingroomFullJs = [<?= implode(',', $todaytemperatureslivingroomFullJs) ?>];
-window.todaypressureoutsideFullJs = [<?= implode(',', $todaypressureoutsideFullJs) ?>];
-window.todayhumidityoutsideFullJs = [<?= implode(',', $todayhumidityoutsideFullJs) ?>];
-</script> 
-<script src="js/vyvoj.js"></script>
-<script src="js/canvasjs.min.js"></script>
-<script src="js/jquery.canvasjs.min.js"></script>
 <body>
 <ul class="topnav">
   <li><a href="index.php"><img src="img/gauge.png" alt="Aktuálne merania"></a></li>
@@ -104,16 +60,24 @@ window.todayhumidityoutsideFullJs = [<?= implode(',', $todayhumidityoutsideFullJ
    <li><a href="pristroje.php"><img src="img/settings.png" alt="settings.png, 1,5kB" title="Prístroje" height="64" width="64"></a></li>
     <li><a href="prognoza.php"><img src="img/sunny.png" alt="sunny.png, 1,2kB" title="Prognóza" height="64" width="64"></a></li>
  </ul>                                          
+     	<script type="text/javascript">
+    google.load('visualization', '1', {'packages':['corechart']});
+    google.setOnLoadCallback(drawChart);
+    function drawChart() {
+      var data = new google.visualization.DataTable(<?=$jsonTable4?>);
+      var options = {
+          title: 'Posledných 24 hodín',
+		  colors: ['brown'],
+		  pointSize: 1
+        };
+      var chart = new google.visualization.LineChart(document.getElementById('chart_div4'));
+      chart.draw(data, options);
 
-   <div style="padding:0 16px;">
+    }
+    </script>
 
- <br>
-<div id="chartDayTempContainer" style="height: 300px; width: 100%;"></div><br>
-<div id="chartDayPresContainer" style="height: 300px; width: 100%;"></div><br>
-<div id="chartDayHumContainer" style="height: 300px; width: 100%;"></div><br>
-<div id="chartFullTempContainer" style="height: 300px; width: 100%;"></div><br>
-<div id="chartFullPresContainer" style="height: 300px; width: 100%;"></div><br>  
-<div id="chartFullHumContainer" style="height: 300px; width: 100%;"></div><br> 
+<div id="chart_div4" style="display: block; max-width: 100%; height: auto;"></div>
+
 </body>    
 </html>
 
